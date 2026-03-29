@@ -13,7 +13,7 @@ class PalmSundayApp extends StatelessWidget {
       title: 'Domingo de Ramos',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green.shade800),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple.shade300),
         useMaterial3: true,
       ),
       initialRoute: '/',
@@ -30,11 +30,11 @@ class PalmSundayCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: const Color(0xFFFAF8F5), // Un color cálido y suave de fondo
       appBar: AppBar(
-        title: const Text('Semana Santa'),
-        backgroundColor: Colors.green.shade800,
-        foregroundColor: Colors.white,
+        title: const Text('Domingo de Ramos'),
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.brown.shade700,
         centerTitle: true,
         elevation: 0,
       ),
@@ -44,75 +44,74 @@ class PalmSundayCardScreen extends StatelessWidget {
           child: Container(
             constraints: const BoxConstraints(maxWidth: 400),
             child: Card(
-              elevation: 12,
-              shadowColor: Colors.green.withOpacity(0.5),
+              elevation: 8,
+              shadowColor: Colors.brown.withOpacity(0.2),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(24),
+                borderRadius: BorderRadius.circular(32),
               ),
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24),
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
-                      Colors.green.shade800,
-                      Colors.green.shade500,
-                    ],
-                  ),
+                  borderRadius: BorderRadius.circular(32),
+                  color: Colors.white,
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 40.0),
+                padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 48.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(
-                      Icons.eco, // Representa las palmas/ramos
-                      size: 72,
-                      color: Colors.white,
-                    ),
-                    const SizedBox(height: 20),
-                    const Text(
-                      'Domingo de Ramos',
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        letterSpacing: 1.2,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 20),
+                    // Un halo suave con un corazón, inspirado en el mensaje de la imagen
                     Container(
-                      height: 2,
-                      width: 80,
-                      color: Colors.white54,
-                    ),
-                    const SizedBox(height: 28),
-                    const Text(
-                      '"Bendito el que viene en el nombre del Señor. Que este día marque el comienzo de una Semana Santa llena de paz, reflexión y amor en nuestros corazones."',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.white,
-                        height: 1.6,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 36),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(20),
+                        shape: BoxShape.circle,
+                        color: Colors.amber.shade50,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.amber.withOpacity(0.2),
+                            blurRadius: 20,
+                            spreadRadius: 5,
+                          ),
+                        ],
                       ),
-                      child: const Text(
-                        '¡Hosanna en las alturas!',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
-                          letterSpacing: 0.5,
-                        ),
+                      child: Icon(
+                        Icons.favorite,
+                        size: 56,
+                        color: Colors.red.shade300,
+                      ),
+                    ),
+                    const SizedBox(height: 40),
+                    const Text(
+                      'Señor, ven y\nentra en mi\ncorazón',
+                      style: TextStyle(
+                        fontSize: 36,
+                        fontWeight: FontWeight.w500,
+                        fontStyle: FontStyle.italic,
+                        color: Color(0xFF4A3B32), // Marrón oscuro cálido
+                        height: 1.2,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 12),
+                    const Text(
+                      '❤',
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Color(0xFF4A3B32),
+                      ),
+                    ),
+                    const SizedBox(height: 40),
+                    Container(
+                      height: 1,
+                      width: 100,
+                      color: Colors.grey.shade300,
+                    ),
+                    const SizedBox(height: 24),
+                    Text(
+                      'DOMINGO DE RAMOS',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.purple.shade300, // Morado por el tiempo litúrgico
+                        letterSpacing: 3,
                       ),
                     ),
                   ],
